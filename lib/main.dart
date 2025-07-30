@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kids_education/pages/homepage.dart';
+import 'package:kids_education/pages/chat_page.dart';
+import 'package:kids_education/constants/app_constants.dart';
 
 void main() {
   runApp(const KidsEducationApp());
@@ -12,20 +14,13 @@ class KidsEducationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kids Education',
+      title: AppConstants.appTitle,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Comic Sans MS',
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF4CAF50),
-          brightness: Brightness.light,
-        ),
-      ),
+      theme: AppTheme.lightTheme,
       initialRoute: Homepage.id,
       routes: {
-        Homepage.id : (context) => const Homepage(),
+        Homepage.id: (context) => const Homepage(),
+        ChatPage.id: (context) => const ChatPage(),
       },
     );
   }
